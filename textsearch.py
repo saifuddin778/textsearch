@@ -5,11 +5,10 @@ import ast
 import json
 import operator
 import shelve
-#
 
 
 class TextSearch:
-
+    """define a new hash based document retrieval system"""
     def __init__(self, dataset, histogram=False):
         """instantiates"""
         self.dataset = dataset
