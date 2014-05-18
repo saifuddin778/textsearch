@@ -22,7 +22,9 @@ class TextSearch:
             self.histogram_ = {}
         else:
             self.create_histo = 0
-
+        
+        self.create_hash()
+        self.hash__ = shelve.open('search_db.bin')
 
     def tokenize(self):
         """tokenizes all the documents by keeping their nouns in"""
@@ -105,7 +107,8 @@ class TextSearch:
         yield_docs = lambda x: {'index': x, 'doc': self.dataset[x][1], 'doc_id': self.dataset[x][0]} if self.index_present else {'index': x, 'doc': self.dataset[x]} 
 
         keyword = keyword.split(' ')
-        hash_ = self.load_hashes()
+        #hash_ = self.load_hashes()
+        hash_ = self.hash__
         
         results_ = []
         
