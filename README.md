@@ -1,4 +1,4 @@
 textsearch
 ==========
 
-A minimalistic and memory-efficient document lookup system in Python
+A minimalistic, fast and memory-efficient document lookup system in Python
