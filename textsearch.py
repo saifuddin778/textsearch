@@ -103,7 +103,6 @@ class TextSearch:
 
     #performs the search over existing set of documents based on the input query
     def lookup(self, keyword, individual=False):
-        
         yield_docs = lambda x: {'index': x, 'doc': self.dataset[x][1], 'doc_id': self.dataset[x][0]} if self.index_present else {'index': x, 'doc': self.dataset[x]} 
 
         keyword = keyword.split(' ')
@@ -127,12 +126,15 @@ class TextSearch:
                     results_.append(hash_[a.encode('utf-8')])
                 except:
                     continue
-
-            int_results_ = list(set.intersection(*map(set,results_)))
-            
-            if len(int_results_):
-                results_ = map(yield_docs, int_results_)
-            else:
+                
+            if individual:
                 results_ = sorted(map(yield_docs, flatten(results_)), reverse=True)
+            else:
+                int_results_ = list(set.intersection(*map(set,results_)))
+                if len(int_results_):
+                    results_ = map(yield_docs, int_results_)
+                else:
+                    results_ = sorted(map(yield_docs, flatten(results_)), reverse=True)
 
         return results_
+
