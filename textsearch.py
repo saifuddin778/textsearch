@@ -9,8 +9,9 @@ import shelve
 
 class TextSearch:
     """define a new hash based document retrieval system"""
+    
     def __init__(self, dataset, histogram=False):
-        """instantiates"""
+        """invokes the process with the dataset"""
         self.dataset = dataset
         self.data_count = len(dataset)
         self.tokenized_dataset = []
