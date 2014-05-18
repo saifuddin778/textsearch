@@ -133,21 +133,3 @@ class TextSearch:
                 results_ = sorted(map(yield_docs, flatten(results_)), reverse=True)
 
         return results_
-            
-            
-
-            
-            
-        
-    
-        
-
-
-    
-
-    
-        
-        
-        
-        
-        
