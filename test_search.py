@@ -5,6 +5,7 @@ import ast
 import json
 from textsearch import TextSearch
 
+#loads
 def load_test():
     y = []
     for a in open('test_data.txt', 'rb'):
@@ -12,6 +13,7 @@ def load_test():
     y = y[0]
     return ast.literal_eval(y)
 
+#tests
 def test_search():
     test_data = load_test()
     t = TextSearch(test_data, True)
