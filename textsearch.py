@@ -10,7 +10,7 @@ import operator
 import shelve
 
 
-class TextSearch(object):
+class textsearch(object):
     """define a new hash based document retrieval system"""
     
     def __init__(self, dataset, histogram=False):
