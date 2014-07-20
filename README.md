@@ -14,5 +14,5 @@ Setting the `histogram` option to true will create a histogram of words in the `
 >>> t.lookup('saif', individual=True/False)
 >>> ['1345', 'saif went to beach']
 ```
-Setting the `multiple` argument in the lookup query to true will return all the documents that contain any of the provided keywords. On the other hand, keeping it as false will return an intersection i.e. all the documents containing all the keywords provided.
+Setting the `multiple` argument in the lookup query to true will return all the documents that contain any of the provided keywords. On the other hand, keeping it as false will return an intersection i.e. all the documents containing all the keywords provided. Multiple keywords can be provided in the form of a single string, like : `saif beach`.
 
